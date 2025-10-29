@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Horror Movies{% endblock %}</title>
+
+    {% load static %}
+    <!-- Google Font Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+    <!-- CSS -->
+    <link rel="stylesheet" href="{% static 'movies/styles.css' %}">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="navbar-logo">Horror Movies!!</div>
+    </nav>
+
+    <!-- CONTENUTO PRINCIPALE -->
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+</body>
+</html>

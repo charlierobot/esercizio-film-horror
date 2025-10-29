@@ -1,0 +1,25 @@
+{% extends 'movies/base.html' %}
+{% load static %}
+{% extends 'movies/base.html' %}
+{% load static %}
+
+{% block title %}Lista Film Horror{% endblock %}
+
+{% block content %}
+<div class="movie-container">
+    {% for movie in movies %}
+    <div class="movie-card">
+        {% if movie.poster %}
+            <img src="{{ movie.poster.url }}" alt="{{ movie.title }}">
+        {% else %}
+            <img src="{% static 'movies/no-poster.png' %}" alt="No Poster">
+        {% endif %}
+        <h3>{{ movie.title }}</h3>
+        <p>{{ movie.director }} - {{ movie.year }}</p>
+    </div>
+    {% empty %}
+        <p>Nessun film trovato.</p>
+    {% endfor %}
+</div>
+{% endblock %}
+
