@@ -1,11 +1,16 @@
 {% extends 'movies/base.html' %}
 {% load static %}
-{% extends 'movies/base.html' %}
-{% load static %}
+
 
 {% block title %}Lista Film Horror{% endblock %}
 
 {% block content %}
+
+
+<div class="container mt-4 text-center text-light">
+  <h1 class="spooky-title">Horror Movies</h1>
+  <p>Welcome to the dark side of cinema...</p>
+</div>
 <div class="movie-container">
     {% for movie in movies %}
     <div class="movie-card">

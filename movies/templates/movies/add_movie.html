@@ -1,0 +1,14 @@
+{% extends 'movies/base.html' %}
+
+{% block title %}Aggiungi Film{% endblock %}
+
+{% block content %}
+<h2>Aggiungi un nuovo film</h2>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Salva</button>
+</form>
+{% endblock %}
+

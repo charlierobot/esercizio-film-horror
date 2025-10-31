@@ -1,0 +1,98 @@
+{% extends 'movies/base.html' %}
+{% block content %}
+<div class="container mt-4">
+   <h1 class="text-center mb-4 spooky-title">Cinema Horror Gallery 🎬</h1>
+  <p>Crafting Fear: The Techniques Behind Horror Cinema
+
+Horror films do not simply show fear — they construct it, frame by frame. Behind every scream and shadow lies a meticulous design of lighting, camera movement, sound, and illusion. To make audiences tremble, filmmakers have long relied on the delicate art of manipulating perception, using the language of cinema itself to blur the line between safety and terror.
+
+Cinematography plays a crucial role in this dark alchemy. Low-key lighting creates deep contrasts and hidden spaces where danger might lurk unseen. The Dutch angle, with its tilted horizon, visually unbalances the viewer, while tight close-ups trap us in the claustrophobia of a character’s fear. Slow tracking shots build dread by suggesting that something — or someone — is following. The camera in horror often behaves like a predator: it stalks, it observes, it waits.
+
+In classic horror, practical effects were the true magic of terror. Before the era of digital monsters, filmmakers relied on handmade nightmares: latex masks, prosthetics, animatronics, and gallons of fake blood. In Psycho’s (1960) legendary shower scene, the blood swirling down the drain was nothing more than chocolate syrup. In The Exorcist (1973), cold rooms, hidden wires, and compressed air made beds levitate and breath freeze on screen. The illusion was tactile — something the audience could almost feel.
+
+Sound design is another invisible weapon. A heartbeat-like rhythm, a distant scream, or a sudden drop into silence can evoke terror even before anything appears. High-pitched strings, like those in Psycho, attack the ear as much as the image assaults the eye. In horror, silence is never safe — it’s a void that waits to be broken.
+
+Even editing serves as a tool of fear. Rapid cuts can create panic; long takes prolong unbearable suspense. The jump scare — a sudden image combined with a burst of sound — exploits our instinctive reactions, but the most haunting horror often hides in slower, subtler rhythms that let dread seep in gradually.
+
+Modern filmmakers blend digital effects with traditional methods, using CGI to extend the nightmare without replacing the authenticity of physical horror. The best horror still depends not on technology, but on psychology — the ability to make the viewer believe that the terror might be real.
+
+In the end, the horror film is a dark symphony of illusion. Fake blood, flickering lights, distorted sounds — all serve one sacred purpose: to make the heart race and the imagination awaken. Because when the screen goes black and the credits roll, the real question remains…
+
+Was it only a movie?</p>
+</div>
+6+
+<!-- BANNER CINEMATOGRAFICO -->
+<div class="cinema-banner text-center text-light py-5">
+  <h1 class="cinema-title">🎬 Cinema Horror 🎬</h1>
+  <p class="cinema-subtitle">Where Fear Takes the Spotlight</p>
+</div>
+
+<!-- TESTO DESCRITTIVO -->
+<div class="container mt-5">
+  <h2 class="text-center spooky-subtitle mb-4">The Art of Fear</h2>
+  <p class="lead text-justify text-light">
+    Horror films do not simply show fear — they construct it, frame by frame. Behind every scream and shadow
+    lies a meticulous design of lighting, camera movement, sound, and illusion. 
+    To make audiences tremble, filmmakers have long relied on the delicate art of manipulating perception,
+    using the language of cinema itself to blur the line between safety and terror.
+  </p>
+
+  <p class="text-light">
+    Cinematography plays a crucial role in this dark alchemy. Low-key lighting creates deep contrasts and hidden spaces,
+    the Dutch angle unbalances the viewer, and slow tracking shots suggest unseen threats. 
+    Even silence in horror cinema is a weapon — a void waiting to be shattered by terror.
+  </p>
+
+  <p class="text-light">
+    Horror cinema is a dark symphony of illusion — fake blood, flickering lights, distorted sounds — 
+    all serving one sacred purpose: to make the heart race and the imagination awaken.
+  </p>
+</div>
+
+<!-- CSS STILE HORROR -->
+<style>
+  body {
+    background-color: #0d0d0d;
+    color: #f2f2f2;
+    font-family: 'Cinzel', serif;
+  }
+
+  .cinema-banner {
+    background: linear-gradient(to bottom, rgba(0,0,0,0.9), rgba(30,0,0,0.7)), 
+                url('https://images.unsplash.com/photo-1606055289582-a769482a3a8e?ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&q=80&w=1170');
+    background-size: cover;
+    background-position: center;
+    animation: flicker 3s infinite alternate;
+    border-bottom: 2px solid crimson;
+  }
+
+  @keyframes flicker {
+    0% { opacity: 0.95; }
+    50% { opacity: 1; }
+    100% { opacity: 0.9; }
+  }
+
+  .cinema-title {
+    font-size: 4rem;
+    font-family: 'Creepster', cursive;
+    color: #ff0000;
+    text-shadow: 2px 2px 20px black, 0 0 20px red;
+  }
+
+  .cinema-subtitle {
+    font-size: 1.4rem;
+    font-style: italic;
+    letter-spacing: 2px;
+    color: #ccc;
+  }
+
+  .spooky-subtitle {
+    color: crimson;
+    font-family: 'Creepster', cursive;
+  }
+</style>
+
+<!-- GOOGLE FONT HORROR -->
+<link href="https://fonts.googleapis.com/css2?family=Creepster&family=Cinzel:wght@400;700&display=swap" rel="stylesheet">
+
+{% endblock %}

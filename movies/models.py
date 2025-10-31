@@ -6,7 +6,7 @@ class Movie(models.Model):
     title = models.CharField(max_length=100)
     director = models.CharField(max_length=100)
     year = models.IntegerField()
-    poster_url = models.URLField()
+    poster = models.ImageField(upload_to='posters/', blank=True, null=True)
 
     def __str__(self):
         return self.title
