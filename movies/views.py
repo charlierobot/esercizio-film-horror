@@ -23,3 +23,26 @@ def horror_genre(request):
 
 def cinema(request):
     return render(request, 'movies/cinema.html',)
+
+
+
+
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from .models import Movie
+from .serializers import MovieSerializer
+from rest_framework import viewsets, filters
+
+class MovieList(APIView):
+    def get(self, request):
+        movies = Movie.objects.all()            # prendi tutti i film
+        serializer = MovieSerializer(movies, many=True)
+        return Response(serializer.data)
+
+from rest_framework import viewsets
+
+class MovieViewSet(viewsets.ModelViewSet):
+    queryset = Movie.objects.all()       # tutti i film
+    serializer_class = MovieSerializer   # come trasformarli in JSON
+    filter_backends = [filters.SearchFilter]   # abilita la ricerca
+    search_fields = ['title']    

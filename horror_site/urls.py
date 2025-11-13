@@ -26,3 +26,16 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
+from rest_framework import routers
+from movies.views import MovieViewSet
+
+# Creiamo un router DRF
+router = routers.DefaultRouter()
+router.register(r'movies', MovieViewSet)  # URL: /api/movies/
+
+urlpatterns = [
+    path('admin/', admin.site.urls),
+    path('api/', include(router.urls)), 
+]

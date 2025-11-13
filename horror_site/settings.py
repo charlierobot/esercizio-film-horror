@@ -16,10 +16,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
-# Quick-start development settings - unsuitable for production
-# See https://docs.djangoproject.com/en/5.2/howto/deployment/checklist/
 
-# SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-c4to2i)+ah1a7n_f8p)(ro-*t#wi3fv+b2$0**po9jn$ctev&g'
 
 # SECURITY WARNING: don't run with debug turned on in production!
@@ -38,7 +35,12 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'movies',
+    # Django REST Framework
+    'rest_framework',
+    'django_filters',
 ]
+
+    
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -77,12 +79,14 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
-    }
+         'USER': 'charlmsql',
+        'PASSWORD': 'miaomiao',
+        'HOST': 'localhost',          # indirizzo del server MySQL
+        'PORT': '3306',               # porta di default di MySQL
 }
+    }
 
 
-# Password validation
-# https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
 
 AUTH_PASSWORD_VALIDATORS = [
     {
@@ -130,3 +134,10 @@ import os
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+REST_FRAMEWORK = {
+    'DEFAULT_FILTER_BACKENDS': [
+        'django_filters.rest_framework.DjangoFilterBackend',
+        'rest_framework.filters.SearchFilter',
+    ]
+}
